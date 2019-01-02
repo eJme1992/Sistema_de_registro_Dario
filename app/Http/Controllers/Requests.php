@@ -122,7 +122,7 @@ class Requests extends Controller
 	
 	
 
- }  // Etiqueta fin de la Clase
+ }  // llave fin de la Clase
 
 
 

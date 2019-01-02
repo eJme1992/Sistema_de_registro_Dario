@@ -72,3 +72,46 @@ button:hover {
 .step.finish {
   background-color: #4CAF50;
 }
+
+
+
+/* Formulario 10 estilos */
+
+
+.center_title{
+	margin-top:70px;
+	text-align: center;
+    font-weight: bold; 
+}
+
+.lista{
+	margin-left:30px;;
+}
+
+
+.parrafo_10, p{
+ text-align:justify;
+ text-justify:inter-ideograph;
+ padding-left:10px;
+ padding-right:10px;
+}
+
+.spansub{
+font-size:8.0pt;
+line-height:115%;
+font-weight: bold; 
+color:black;
+}
+
+.span_10, .list, p{
+  font-size:8.0pt;
+  line-height:115%;
+  
+  /*mso-fareast-font-family:Times New Roman;*/
+  mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin;
+  color:black;
+  mso-themecolor:text1;
+}
+
+/* Fin formulario 10 estilos */
