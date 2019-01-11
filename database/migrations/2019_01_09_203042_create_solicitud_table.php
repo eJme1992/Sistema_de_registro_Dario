@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLicensesTable extends Migration
+class CreateSolicitudTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,24 @@ class CreateLicensesTable extends Migration
      */
     public function up()
     {
-        Schema::create('licenses', function (Blueprint $table) {
+          Schema::create('solicitud', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('job_id')->unsigned();
-            $table->integer('licencia');
-            $table->string('estado');
+			
+            $table->string('disponible')->nullable();
+            $table->string('extrabajador',10)->nullable();
+            $table->string('inicio_extrabajo')->nullable();
+            $table->string('fin_extrabajo')->nullable();
+            $table->string('posicion')->nullable();
             $table->timestamps();
         });
 		
-		Schema::table('licenses', function($table) {
+		 Schema::table('solicitud', function($table) {
 		 $table->foreign('job_id')->references('id')->on('jobs');
 		});
+   
+   
     }
 
     /**
@@ -34,6 +40,9 @@ class CreateLicensesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('licenses');
+ 
+        Schema::dropIfExists('solicitud');
     }
+    
+	
 }

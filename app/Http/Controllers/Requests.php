@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 use App\Job;
 use App\Form;
 use App\License;
+
+
+//SECOND STEP
+use App\Address;
+use App\Solicitud;
+use App\Three_address;
+
+
+
+
 class Requests extends Controller
 {
    
@@ -112,11 +122,107 @@ class Requests extends Controller
 				
 				
 				      //return response()->json(['mensaje' => 'successfully', 'status' => 'ok'], 200);
-           
+        
 			}
 			
         return view('layouts.requests.request_second_step', compact('Form','Job'));
 	 }
+	
+	
+	
+	
+	
+	
+	public function input_data_bd(Request $request){
+		
+		$slug = $request->input('slug');
+		
+		/**/
+		$Form = new Form();
+        $Job = new Job(); 
+		$Address = new Address(); 
+		$Solicitud = new Solicitud(); 
+		$Three_address = new Three_address();
+		
+		$Form = Form::where('slug',$slug)->first();
+        $Job = Job::where('id',$Form->job_id)->first(); 
+		
+		
+		
+		if($request->input('contadorForm') == 1){
+			
+		//Job
+		$Job->phone = $request->input('phone');
+		$Job->cell_phone = $request->input('cell_phone');
+		$Job->emergency_phone = $request->input('emergency_phone');
+		$Job->nacionalidad = $request->input('nacionalidad');
+		$Job->permiso_trabajo = $request->input('permiso_trabajo');
+        $Job->save();
+	
+	
+	   //Address
+	   $Address->job_id = $Form->job_id;
+	   $Address->direccion = $request->input('direccion');
+	   $Address->apartamento = $request->input('apartamento');
+	   $Address->ciudad = $request->input('city');
+	           //$Address->estado = ;   HAY QUE AGREGAR LOS ESTADOS EN EL FORM
+	   $Address->zip =  $request->input('zip');
+	   $Address->cuanto_tiempo = $request->input('howlong');
+	   $Address->save();
+	   
+	   //Solicitud
+	   $Solicitud->job_id = $Form->job_id;
+	   $Solicitud->disponible = $request->input('disponible');
+	   $Solicitud->extrabajador = $request->input('ex_trabajador'); 
+	   $Solicitud->inicio_extrabajo = $request->input('inicio_extrabajo');
+	   $Solicitud->fin_extrabajo = $request->input('fin_extrabajo');
+	   $Solicitud->posicion = $request->input('position_applied_for');
+	   $Solicitud->save();
+	   
+		}
+		
+		
+		
+		
+		else if ( ($request->input('contadorForm') == 2) && ($request->input('boton_bucle') == "three_adress_button") ){
+			
+			$Three_address->job_id = $Form->job_id;
+			$Three_address->direccion = $request->input('three_address');
+			$Three_address->apartamento = $request->input('three_apartamento');;
+			$Three_address->ciudad = $request->input('three_city');
+			$Three_address->estado = $request->input('three_estado');
+			$Three_address->zip = $request->input('three_zip');
+			$Three_address->cuanto_tiempo = $request->input('three_howlong');
+			
+			
+			$Three_address->save();
+			
+			$Three_address = Three_address::where('job_id', $Form->job_id)->get()->toArray();
+		//return response()->json(['mensaje' => $Three_address->direccion, 'status' => 'ok'], 200);
+		return response()->json(['three_adress' => $Three_address, 'status' => 'ok'], 200);
+			
+		}
+		
+		
+		
+		
+		
+		else if ($request->input('contadorForm') == 3){}
+		else if ($request->input('contadorForm') == 4){}
+		else if ($request->input('contadorForm') == 5){}
+		else if ($request->input('contadorForm') == 6){}
+		else if ($request->input('contadorForm') == 7){}
+		else if ($request->input('contadorForm') == 8){}
+		
+		
+		
+		
+		
+		
+		
+		return response()->json(['mensaje' => 'successfully', 'status' => 'ok'], 200);
+	}
+	
 	
 	
 	

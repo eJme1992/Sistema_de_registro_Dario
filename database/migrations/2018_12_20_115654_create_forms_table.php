@@ -14,16 +14,20 @@ class CreateFormsTable extends Migration
     public function up()
     {
         Schema::create('forms', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('slug');
-            $table->integer('job_id');
+            $table->integer('job_id')->unsigned();
             $table->string('status')->nullable();
             $table->integer('paso')->nullable();
             $table->string('pdf1')->nullable();
             $table->string('pdf2')->nullable();
             $table->timestamps();
-            $table->foreign('job_id')->references('id')->on('forms');
         });
+		
+		Schema::table('forms', function($table) {
+		 $table->foreign('job_id')->references('id')->on('jobs');
+		});
     }
 
     /**

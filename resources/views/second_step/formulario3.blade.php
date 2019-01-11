@@ -1,4 +1,4 @@
-                  <div class=" panel-body row">
+                  <div class=" panel-body"  style = "background-color:#F9F7F7">
             <div class="col-md-3" style="margin-top:2%;">
                 <label for="city"> STATE:</label>
                 <select class="form-control"   id="st" name="st"  >

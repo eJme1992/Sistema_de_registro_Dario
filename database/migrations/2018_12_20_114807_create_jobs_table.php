@@ -14,6 +14,7 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
             $table->increments('id')->unique();
             $table->string('SSN')->unique();
             $table->string('nombre')->nullable();
@@ -21,6 +22,12 @@ class CreateJobsTable extends Migration
             $table->string('firma')->nullable();
             $table->string('edad')->nullable();
             $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('cell_phone')->nullable();
+            $table->string('emergency_phone')->nullable();
+            $table->string('nacionalidad',10)->nullable();
+            $table->string('permiso_trabajo',10)->nullable();
+			
             $table->timestamps();
         });
     }

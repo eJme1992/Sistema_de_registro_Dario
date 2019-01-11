@@ -6,10 +6,8 @@ $('#from').val(),
 $('#to').val(),
 $('#kl').val(),
 );return false;">
-    <div class="container" style="margin-top:2%;">
-        <div class="panel panel-primary">
-            <div class="center-block panel-heading" style="font-size: 15PX;"> DRIVER EXPERIENCE</div>
-            <div class="panel-body">
+            <div class="center-block panel-heading" style="font-size: 15PX; background-color:#FAFAFA;"> DRIVER EXPERIENCE</div>
+            <div class="panel-body" style = "background-color:#F9F7F7">
                 <div class="row">
                     <div class="col-sm-4">
                         <label>Class equipment</label>
@@ -23,7 +21,7 @@ $('#kl').val(),
                     <div class="col-sm-4">
                         <label>type of equipment</label>
                         
-                        <select required id="st"   name="st"     class="form-control "    style="border: none;">
+                        <select required id="st"   name="st"     class="form-control "    >
                             <option>Van</option>
                             <option> Refeer </option>
                             <option> Flatbed</option>
@@ -37,24 +35,30 @@ $('#kl').val(),
                     </div>
                     <div class="col-sm-2">
                         <label>Date: from</label>
-                        <input required id="from" name="from"   class="form-control " placeholder="From"                style="border: none;" type="date">
+                        <input required id="from" name="from"   class="form-control " placeholder="From"  type="date">
                     </div>
                     <div class="col-sm-2">
                         <label>to:</label>
-                        <input required id="to"   name="to"     class="form-control " placeholder="To"                  style="border: none;" type="date">
+                        <input required id="to"   name="to"     class="form-control " placeholder="To"  type="date">
                     </div>
                     <div class="col-sm-6">
                         <label>Aprox number of myles</label>
-                        <input required id="kl"   name="kl"     class="form-control " placeholder="APRPOX.NO.OF MYLES " style="border: none;" type="number">
+                        <input required id="kl"   name="kl"     class="form-control " placeholder="APRPOX.NO.OF MYLES "  type="number">
                     </div>
                  
-                    <div class="col-md-12" style="margin-top:2%;">
-                        <button type="submit" class="btn btn-default" name="send" id="send"/>
-                        Submit
-                        </button>
-                    </div>
+                   
+					
+					
                     <br>
                 </div>
+				 <div class = "row col-md-2" style="margin-top:20px;">
+					<button id = "three_adress_button" onclick = "realizaProceso2('send_data', this.id);">Add</button>
+					</div>
+					
+				
+				
+				<!--
+				<div class = "row col-md-12" style="margin-top:20px;">	
                 <div class="table-responsive center-block" style="margin-top:2%;">
                     <table class="table table-bordered" id="resultado">
                         <thead>
@@ -77,9 +81,45 @@ $('#kl').val(),
                             </tr>
                         </thead>
                     </table>
-                </div>
-            </div>
         </div>
+        </div> -->
+		
+			 <div class = "row col-md-12" style="margin-top:20px;">
+  <table class="table table-responsive" id = "tabla_three_adress">
+  <thead class="thead-dark">
+    <tr style="background-color:#E6E6E6">
+      <th scope="col">Locations:</th>
+      <th scope="col">Dates:</th>
+      <th scope="col">Charges:</th>
+      <th scope="col">Penalty:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+		
+		
+		
+		
     </div>
 </form>
 
@@ -94,26 +134,24 @@ $('#tp').val(),
 $('#lc').val(),
 $('#mt').val()
 );return false;">
-    <div class="container">
-        <div class="panel panel-primary">
-            <div class="center-block panel-heading" style="font-size: 15PX;">TRAFFIC CONVICTION AND FORFEITURES FOR THE PAST 3 YEARS(OTHER THAN PARKING VIOLATIONS)</div>
-            <div class="panel-body">
+            <div class="center-block panel-heading" style="font-size: 15PX; background-color:#FAFAFA; margin-top:40px;">TRAFFIC CONVICTION AND FORFEITURES FOR THE PAST 3 YEARS(OTHER THAN PARKING VIOLATIONS)</div>
+            <div class="panel-body" style = "background-color:#F9F7F7">
                 <div class="row">
                     <div class="col-sm-6">
                         <label>Dates:</label>
-                        <input required id="dt"   name="dt"     class="form-control " placeholder="Dates"   style="border: none;" type="date">
+                        <input required id="dt"   name="dt"     class="form-control " placeholder="Dates" type="date">
                     </div>
                     <div class="col-sm-6">
                         <label>Nature Of The Accident</label>
-                        <input required id="na"   name="na"     class="form-control " placeholder="Nature Of The Accident"   style="border: none;" type="text">
+                        <input required id="na"   name="na"     class="form-control " placeholder="Nature Of The Accident"   type="text">
                     </div>
                     <div class="col-sm-6">
                         <label>Fatalities</label>
-                        <input required id="fa" name="fa"   class="form-control " placeholder="Fatalities"                style="border: none;" type="number">
+                        <input required id="fa" name="fa"   class="form-control " placeholder="Fatalities"  type="number">
                     </div>
                     <div class="col-sm-6">
                         <label>Injuries</label>
-                        <input required id="inj"   name="inj"     class="form-control " placeholder="Injuries" style="border: none;" type="number">
+                        <input required id="inj"   name="inj"     class="form-control " placeholder="Injuries" type="number">
                     </div>
                     <div class="col-sm-4">
                         <label for="firma"> Type of vehicle Operated:</label>
@@ -125,7 +163,7 @@ $('#mt').val()
                     </div>
                     <div class="col-sm-4">
                         <label>Locations</label>
-                        <select  required id="lc"   name="lc"     class="form-control "   style="border: none;" >
+                        <select  required id="lc"   name="lc"     class="form-control ">
                             <option value="AL" selected="selected" >Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -179,13 +217,23 @@ $('#mt').val()
                             <option value="WY">Wyoming</option>
                         </select>
                     </div>
-                    <div class="col-md-12" style="margin-top:2%;">
-                        <button type="submit" class="btn btn-default" name="send2" id="send2"/>
-                        Submit
-                        </button>
-                    </div>
+					
+					
+					 <div class="col-md-3">
+				
+				
+                   <div class = "row col-md-2" style="margin-top:20px;">
+					 <button id = "three_adress_button" onclick = "realizaProceso2('send_data', this.id);">Add</button>
+					</div>
+					
                     <br>
                 </div>
+					
+					
+                    <br>
+                </div>
+				
+				<!--
                 <div class="table-responsive center-block" style="margin-top:2%;">
                     <table class="table table-bordered" id="resultado2">
                         <thead>
@@ -198,9 +246,42 @@ $('#mt').val()
                             </tr>
                         </thead>
                     </table>
-                </div>
-            </div>
         </div>
+		-->
+		
+			 <div class = "row col-md-12" style="margin-top:20px;">
+  <table class="table table-responsive" id = "tabla_three_adress">
+  <thead class="thead-dark">
+    <tr style="background-color:#E6E6E6">
+      <th scope="col">Locations:</th>
+      <th scope="col">Dates:</th>
+      <th scope="col">Charges:</th>
+      <th scope="col">Penalty:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+		
     </div>
 </form>
 
@@ -213,14 +294,12 @@ $('#dt1').val(),
 $('#ch1').val(),
 $('#pn').val()
 );return false;">
-    <div class="container">
-    <div class="panel panel-primary">
-        <div class="center-block panel-heading" style="font-size: 15PX;">Criminal charges during the last 3 years</div>
-        <div class="panel-body">
+        <div class="center-block panel-heading" style="font-size: 15PX; background-color:#FAFAFA; margin-top:40px;">Criminal charges during the last 3 years</div>
+        <div class="panel-body" style = "background-color:#F9F7F7">
             <div class="row">
                 <div class="col-sm-6">
                     <label>Locations</label>
-                    <select  required id="lc"   name="lc"     class="form-control "   style="border: none;" >
+                    <select  required id="lc" name="lc" class="form-control">
                         <option value="AL" selected="selected" >Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -276,24 +355,26 @@ $('#pn').val()
                 </div>
                 <div class="col-sm-6">
                     <label>Dates</label>
-                    <input required      id="dt1"   name="dt1"     class="form-control " placeholder="Dates"   style="border: none;" type="date">
+                    <input required id="dt1" name="dt1" class="form-control" placeholder="Dates" type="date">
                 </div>
                 <div class="col-sm-6">
                     <label>Charges</label>
-                    <input required    id="ch1"   name="ch1"     class="form-control " placeholder="Charges"                style="border: none;" type="text">
+                    <input required  id="ch1" name="ch1" class="form-control " placeholder="Charges"  type="text">
                 </div>
                 <div class="col-sm-6">
                     <label>Penalty</label>
-                    <input required    id="pn"   name="pn"     class="form-control " placeholder="Penalty" style="border: none;" type="text">
+                    <input required id="pn"  name="pn" class="form-control " placeholder="Penalty" type="text">
                 </div>
-                <div class="col-md-3" style="margin-top:2%;" >
-                    <div class="col-md-12" style="margin-top:2%;">
-                        <button type="submit" class="btn btn-default" name="send3" id="send3"/>
-                        Submit
-                        </button>
-                    </div>
+                <div class="col-md-3" >
+				
+				
+                   <div class = "row col-md-2" style="margin-top:20px;">
+					 <button id = "three_adress_button" onclick = "realizaProceso2('send_data', this.id);">Add</button>
+					</div>
+					
                     <br>
                 </div>
+				<!--
                 <div class="col-sm-12 table-responsive center-block" style="margin-top:2%;">
                     <table class="table table-bordered" id="resultado3">
                         <thead>
@@ -305,10 +386,43 @@ $('#pn').val()
                             </tr>
                         </thead>
                     </table>
-                    </div>
-          
-            </div>
+                    </div>-->
+					
+					 
         </div>
-    </div>
+		
+		 <div class = "row col-md-12" style="margin-top:20px;">
+  <table class="table table-responsive" id = "tabla_three_adress">
+  <thead class="thead-dark">
+    <tr style="background-color:#E6E6E6">
+      <th scope="col">Locations:</th>
+      <th scope="col">Dates:</th>
+      <th scope="col">Charges:</th>
+      <th scope="col">Penalty:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+          
     </div>     
 </form>

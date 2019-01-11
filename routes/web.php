@@ -24,3 +24,8 @@ Route::post('data','Requests@datos');
 //secund_step
 Route::get('second_step/{slug}','Requests@second_step');
 Route::post('second_step/{slug}','Requests@second_step'); //entrada
+
+
+
+Route::get('send_data','Requests@input_data_bd'); //entrada
+Route::post('send_data','Requests@input_data_bd'); //entrada

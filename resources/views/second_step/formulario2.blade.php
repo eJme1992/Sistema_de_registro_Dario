@@ -1,20 +1,20 @@
-                      <div class="panel-body">
+                      <div class="panel-body"  style = "background-color:#F9F7F7">
                     <div class="row">
                     <div class="col-md-6" style="margin-top:2%;">
 				<label for="addres"> Address:</label>
-				<input class="form-control" maxlength="70" type="text" name="add" id="add" placeholder="Address" required>
+				<input class="form-control" maxlength="70" type="text" name="three_address" id="add" placeholder="Address" required>
 			</div>
 			<div class="col-md-3" style="margin-top:2%;">
 				<label for="apparment"> Apartment:</label>
-				<input class="form-control" type="text" maxlength="15" id="ap" name="ap" placeholder="Unit#">
+				<input class="form-control" type="text" maxlength="15" id="ap" name="three_apartamento" placeholder="Unit#">
 			</div>
 			<div class="col-md-3" style="margin-top:2%;">
 				<label for="city"> City:</label>
-				<input class="form-control" type="text" required maxlength="15" id="ct" name="ct" placeholder="City">
+				<input class="form-control" type="text" required maxlength="15" id="ct" name="three_city" placeholder="City">
 			</div>
 			<div class="col-md-3" style="margin-top:2%;">
 				<label for="state"> State:</label>
-				 <select class="form-control"   id="st" name="st"  >
+				 <select class="form-control"   id="st" name="three_estado"  >
   
   <option value="AL" selected="selected" >Alabama</option>
   <option value="AK">Alaska</option>
@@ -72,11 +72,59 @@
 			</div>
 			<div class="col-md-3" style="margin-top:2%;">
 				<label for="zip"> Zip:</label>
-				<input class="form-control" type="text" required maxlength="15" id="zp" name="zp" placeholder="zip">
+				<input class="form-control" type="text" required maxlength="15" id="zp" name="three_zip" placeholder="zip">
 			</div>
 			<div class="col-md-3" style="margin-top:2%;">
 				<label for="howl"> How long:</label>
-				<input class="form-control" type="number" required name="hl" id="hl" placeholder="how long">
+				<input class="form-control" type="number" required name="three_howlong" id="hl" placeholder="how long">
 			</div>
+			
+			
+			
   </div>
+  
+  <div class = "row col-md-2" style="margin-top:20px;">
+			<button id = "three_adress_button" onclick = "realizaProceso2('send_data', this.id);">Add</button>
+  </div>
+  
+  <div class = "row col-md-12" style="margin-top:50px;">
+  <table class="table table-responsive" id = "tabla_three_adress">
+  <thead class="thead-dark">
+    <tr style="background-color:#E6E6E6">
+      <th scope="col">Address:</th>
+      <th scope="col">Apartament:</th>
+      <th scope="col">City:</th>
+      <th scope="col">State:</th>
+      <th scope="col">Zip:</th>
+      <th scope="col">How Long:</th>
+    </tr>
+  </thead>
+  <tbody id = "loopdds">
+  <!--
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+	-->
+	
+  </tbody>
+</table>
 </div>
+</div>
+
+
+

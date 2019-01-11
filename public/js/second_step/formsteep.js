@@ -37,6 +37,7 @@ function nextPrev(n) {
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
+  
 }
 
 function validateForm() {
